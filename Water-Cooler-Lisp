@@ -1,0 +1,14 @@
+(defvar *bottle-weight* 41.7)
+ 
+(defvar bottle-status (read))
+(defvar end-user (read))
+ 
+(if (string-equal bottle-status "yes")
+(format t "The bottle requires changing")
+(format t "The bottle does not require changing."))
+(if (and (< end-user (* *bottle-weight* 2.25)) (string-equal bottle-status "yes"))
+(format t ", but the END USER will be crushed!")
+(format t ""))
+(if (and (> end-user (* *bottle-weight* 2.25)) (string-equal bottle-status "yes"))
+(format t " and the END USER has no excuse!")
+(format t ""))
