@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class WaterCooler {
+    public static void main(String[] args) {
+        double waterWeight = 41.7;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Did you empty the water: ");
+        String waterState = scanner.nextLine();
+
+        if (waterState.equalsIgnoreCase("yes")) {
+            System.out.println("You probably should, but first another question.");
+            System.out.print("How much do you weigh: ");
+            String weightInput = scanner.nextLine();
+
+            double weight;
+            weight = Double.parseDouble(weightInput);
+
+            if (weight < waterWeight * 2.25) {
+                System.out.println("Don't be silly. You'll be crushed!");
+            } else {
+                System.out.println("Of course you should!");
+            }
+        }
+
+        System.out.print("Press Enter to exit...");
+        scanner.nextLine();
+        scanner.close();
+    }
+}
